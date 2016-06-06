@@ -1,0 +1,68 @@
+---
+title: "Get nodes within boundaries from OSM"
+author: "Jan-Philipp Kolb"
+date: "6 Juni 2016"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,cache=T)
+```
+
+## A function to get the nodes in a boundary
+
+```{r}
+nodes4boundaries <- function(object,boundary){
+  Link1 <- "http://www.overpass-api.de/api/interpreter?data="
+  InfoList <- xmlParse(paste0(Link1,"node[",object,"](",boundary,");out;"))
+  return(InfoList)  
+}
+```
+
+
+
+## Code underlying my presentation in Stanford
+
+Get nodes for a certain boundary
+
+```{r}
+library(XML)
+object <- "leisure=playground"
+boundary <- "50.6,7.0,50.8,7.3"
+pg_C <- nodes4boundaries(object,boundary)
+```
+
+## How the result looks like
+
+```{r}
+head(pg_C)
+```
+
+## Some Links 
+
+[Get boundaries]
+
