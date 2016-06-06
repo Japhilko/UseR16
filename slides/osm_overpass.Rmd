@@ -1,0 +1,14 @@
+---
+title: "About OpenStreetMap and Overpass"
+author: "Jan-Philipp Kolb"
+date: "6 Juni 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## [Overpass](http://wiki.openstreetmap.org/wiki/Overpass_API)
+
+- Overpass API is most useful when the amount of data needed is only a selection of the data available in the region. 

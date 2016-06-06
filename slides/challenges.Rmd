@@ -1,0 +1,12 @@
+---
+title: "Challenges"
+author: "Jan-Philipp Kolb"
+date: "6 Juni 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Error : package 'XML' required by could not be found
