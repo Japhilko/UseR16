@@ -12,3 +12,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ## GESIS 
 
 - Leibniz Institute for the Social Sciences
+
+
+
+## Stanford University 
+
+![Overview Stanford](figure/StanfordUniversity.PNG)
+
+
+![Get closer](figure/InnerQuad.PNG)

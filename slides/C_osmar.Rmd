@@ -1,0 +1,117 @@
+---
+title: "osmar"
+author: "Jan-Philipp Kolb"
+date: "8 Juni 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=F,cache=T,message=F)
+```
+
+## Loading necessary packages
+
+```{r loadpackages}
+# install.packages("osmar")
+library("osmar")
+src <- osmsource_api()
+
+citation("osmar")
+library("ggmap")
+```
+
+## An example
+
+```{r getosmar}
+gc <- geocode("Bielefeld")
+bb <- center_bbox(gc$lon, gc$lat, 1000, 1000)
+ua <- get_osm(bb, source = src)
+```
+
+## Get the contours of buildings
+
+```{r getbuildings}
+bg_ids <- find(ua, way(tags(k=="building")))
+bg_ids <- find_down(ua, way(bg_ids))
+bg <- subset(ua, ids = bg_ids)
+bg_poly <- as_sp(bg, "polygons")  
+```
+
+```{r plotbuildings}
+par(mai=c(0,0,0,0))
+plot(bg_poly,col="royalblue",border="lightgray")
+```
+
+```{r}
+# export image
+png("Erfurt_buildings.png")
+  plot(bg_poly,col="royalblue",border="lightgray")
+dev.off()
+```
+
+## Get the roads
+
+```{r getroads}
+way_types <- c("pedestrian","secondary","tertiary","residential")
+
+for (i in 1:length(way_types)){
+  osm_obj <- find(ua, way(tags(k == "highway" & v == way_types[i])))
+  osm_obj <- find_down(ua, way(osm_obj))
+  osm_obj <- subset(ua, ids = osm_obj)
+  eval(parse(text=paste0(way_types[i],"_sp <- as_sp(osm_obj,'lines')")))
+}
+```
+
+## Plot the roads
+
+```{r buildings_roads}
+plot(bg_poly,col="royalblue",border="lightgray")
+plot(pedestrian_sp,type="l",col="chocolate1",add=T)
+plot(secondary_sp,type="l",col=c("#76EEC6"),add=T)
+plot(tertiary_sp,type="l",col=c("#CD1076"),add=T)
+plot(residential_sp,type="l",col=c("#9ACD32"),add=T)
+```
+
+## Points of interest
+
+```{r}
+
+osm_values <- c("bus_stop","tree")
+osm_keys <- c("highway","natural")
+
+for ( i in 1:length(osm_values)){
+osm_obj <- find(ua, node(tags(k == osm_keys[i] & v == osm_values[i])))
+osm_obj <- find_down(ua, node(osm_obj))
+osm_obj <- subset(ua, ids = osm_obj)
+eval(parse(text=paste0(osm_values[i],"_sp <- as_sp(osm_obj,'points')")))
+}
+```
+
+## Plot POIs
+
+```{r plotPOI}
+plot(bg_poly,col="royalblue",border="lightgray")
+plot(pedestrian_sp,type="l",col="chocolate1",add=T)
+plot(secondary_sp,type="l",col=c("#76EEC6"),add=T)
+plot(tertiary_sp,type="l",col=c("#CD1076"),add=T)
+plot(residential_sp,type="l",col=c("#9ACD32"),add=T)
+
+plot(tree_sp,pch=20,cex=.5,col=rgb(.1,1,0,.5),add=T)
+plot(bus_stop_sp,pch=20,cex=2,col=rgb(1,0,0,.8),add=T)
+```
+
+
+```{r,eval=F}
+way_types <- c("river")
+i<-1
+osm_obj <- find(ua, way(tags(k == "waterway" & v == way_types[i])))
+osm_obj <- find_down(ua, way(osm_obj))
+osm_obj <- subset(ua, ids = osm_obj)
+eval(parse(text=paste0(way_types[i],"_sp <- as_sp(osm_obj,'lines')")))
+```
+
+```{r plotriver,eval=F}
+plot(bg_poly,col=c("#CD3333"),border=c("#CD3333"))
+plot(river_sp,type="l",col=c("#00688B"),add=T,lwd=1.5)
+```
+
