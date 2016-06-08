@@ -42,7 +42,7 @@ par(mai=c(0,0,0,0))
 plot(bg_poly,col="royalblue",border="lightgray")
 ```
 
-```{r}
+```{r,eval=F}
 # export image
 png("Erfurt_buildings.png")
   plot(bg_poly,col="royalblue",border="lightgray")

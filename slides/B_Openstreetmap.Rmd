@@ -23,6 +23,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - With [XAPI](http://wiki.openstreetmap.org/wiki/Xapi) and [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) it is possible to download custom data sets
 
+- [Databases](http://wiki.openstreetmap.org/wiki/Databases_and_data_access_APIs)
+
 ## XML from Overpass
 
 ![XML example](figure/xmlexample.PNG)
