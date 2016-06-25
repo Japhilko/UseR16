@@ -2,17 +2,12 @@
 title: "Introduction"
 author: "Jan-Philipp Kolb"
 date: "8 Juni 2016"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## GESIS 
-
-- Leibniz Institute for the Social Sciences
-
 
 
 ## Stanford University 
@@ -21,3 +16,49 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ![Get closer](figure/InnerQuad.PNG)
+
+```{r firstpicture}
+library("ggmap")
+cityI <- "Stanford"
+cityM <- qmap(cityI,zoom=14)
+cityM13 <- qmap(cityI,zoom=13)
+```
+
+```{r plotpics}
+cityM
+cityM13
+```
+
+```{r satellite}
+cityS13 <- qmap(cityI,zoom=13, maptype = "satellite")
+cityS13
+cityS14 <- qmap(cityI,zoom=14, maptype = "satellite")
+cityS14
+cityH14 <- qmap(cityI,zoom=14, maptype = "hybrid")
+cityH14
+```
+
+```{r}
+cityS16 <- qmap(cityI,zoom=16, maptype = "satellite")
+cityS16
+```
+
+
+
+```{r citycenter}
+ccenter <- "Stanford"
+ccenterH14 <- qmap(ccenter,zoom=14, maptype = "hybrid")
+ccenterH14
+```
+
+
+```{r osm_ggmap}
+ccenterO14 <- qmap(ccenter,zoom=14, source = "osm")
+ccenterO14
+```
+
+```{r osm_ggmap15}
+ccenterO15 <- qmap(ccenter,zoom=15, source = "osm")
+ccenterO15
+```
+

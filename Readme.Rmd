@@ -1,5 +1,5 @@
 ---
-title: "Readme"
+title: "Tie-ins between R and Openstreetmap data"
 author: "Jan-Philipp Kolb"
 date: "6 Juni 2016"
 output: md_document
@@ -7,7 +7,7 @@ output: md_document
 
 ## Topics
 
-- Introduction
+- [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
 - The Openstreetmap project
 - The R-package osmar
 - The R-package geosmdata
