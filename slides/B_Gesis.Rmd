@@ -1,0 +1,17 @@
+---
+title: "Gesis"
+author: "Jan-Philipp Kolb"
+date: "25 Juni 2016"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GESIS - [Leibniz Institute for the Social Sciences](http://www.gesis.org/home/)
+
+What is [Gesis](http://www.gesis.org/home/) and our work in social sciences
+
+- Data and information research
+- Survey planning and design
