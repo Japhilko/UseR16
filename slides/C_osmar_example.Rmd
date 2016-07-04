@@ -1,0 +1,182 @@
+---
+title: "osmar"
+author: "Jan-Philipp Kolb"
+date: "8 Juni 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,warning=F,cache=T,message=F)
+cityI <- "Dallas"
+```
+
+
+```{r loadpackages}
+## Loading necessary packages
+
+# install.packages("osmar")
+library("osmar")
+src <- osmsource_api()
+
+# citation("osmar")
+```
+
+
+```{r ggmappackage}
+library("ggmap")
+
+# install.packages("ggmap")
+# citation("ggmap")
+# install.packages("shinyjs")
+# library("geosmdata")
+```
+
+```{r getosmar}
+gc <- geocode(cityI)
+bb <- center_bbox(gc$lon, gc$lat, 1000, 1000)
+ua <- get_osm(bb, source = src)
+save(ua,file=paste0("data/ua_",cityI,".RData"))
+```
+
+
+Vergleichende Analyse von verschiedenen Gebieten (bspw. Gemeinden, Stadtteile oder Häuserblocks,...)
+
+
+```{r getbuildings}
+## Get the contours of buildings
+bg_ids <- find(ua, way(tags(k=="building")))
+bg_ids <- find_down(ua, way(bg_ids))
+bg <- subset(ua, ids = bg_ids)
+bg_poly <- as_sp(bg, "polygons")  
+```
+
+```{r plotbuildings}
+par(mai=c(0,0,0,0))
+plot(bg_poly,col=c("#CD3700"),border=c("#8B2500"))
+
+png(paste0("figure/plot_",cityI,".png"))
+  par(mai=c(0,0,0,0))
+  plot(bg_poly,col=c("#CD3700"),border=c("#8B2500"))
+dev.off()
+```
+
+
+```{r qtmap}
+# install.packages("tmap")
+library(tmap)
+
+qtm(bg_poly)
+
+png(paste0("figure/qtm_",cityI,".png"))
+  par(mai=c(0,0,0,0))
+  qtm(bg_poly,fill=c("#8B1A1A"),style="gray")
+dev.off()
+```
+
+
+```{r getroads}
+## Get the roads
+
+way_typesL <- c("trunk","motorway","primary","secondary","tertiary","residential","pedestrian")
+
+waycols <- c("#C1FFC1", "#9BCD9B", "#66CDAA", "#458B74", "#556B2F", "#00CD00", "#008B45")
+
+exways <- as.character(ua$ways$tags$v)
+way_types <- way_typesL[way_typesL%in%exways]
+
+for (i in 1:length(way_types)){
+  osm_obj <- find(ua, way(tags(k == "highway" & v == way_types[i])))
+  osm_obj <- find_down(ua, way(osm_obj))
+  osm_obj <- subset(ua, ids = osm_obj)
+  eval(parse(text=paste0(way_types[i],"_sp <- as_sp(osm_obj,'lines')")))
+}
+```
+
+## Plot the roads
+
+```{r buildings_roads}
+plot(bg_poly,col="royalblue",border="lightgray")
+for(i in 1:length(way_types)){
+  eval(parse(text=paste0("plot(",way_types[i],"_sp,type='l',col='",waycols[i],"',add=T)")))
+}
+
+png(paste0("figure/tmways_",cityI,".png"))
+  par(mai=c(0,0,0,0))
+  plot(bg_poly,col="royalblue",border="lightgray")
+for(i in 1:length(way_types)){
+  eval(parse(text=paste0("plot(",way_types[i],"_sp,type='l',col='",waycols[i],"',add=T)")))
+}
+dev.off()
+```
+
+
+```{r tmapColors}
+citymap <- tm_shape(bg_poly) +
+  tm_fill(c("#8B1A1A")) +
+  tm_borders(c("#CDC8B1"))+
+  tm_style_cobalt()
+
+scaleL <- sort(seq(0,4,4/(length(way_types)-1)),decreasing = T)
+
+for(i in 1:length(way_types)){
+  eval(parse(text=paste0("citymap <- citymap + tm_shape(", way_types[i],"_sp)+  tm_lines('",waycols[i],"',scale=",scaleL[i],")")))
+}
+
+png(paste0("figure/citymap_",cityI,".png"))
+  citymap
+dev.off()
+```
+
+```{r getpoi}
+## Points of interest
+osm_values <- c("bus_stop","tree")
+osm_keys <- c("highway","natural")
+
+for ( i in 1:length(osm_values)){
+osm_obj <- find(ua, node(tags(k == osm_keys[i] & v == osm_values[i])))
+osm_obj <- find_down(ua, node(osm_obj))
+osm_obj <- subset(ua, ids = osm_obj)
+eval(parse(text=paste0(osm_values[i],"_sp <- as_sp(osm_obj,'points')")))
+}
+```
+
+## Plot POIs
+
+```{r plotPOI}
+citymap + 
+tm_shape(bus_stop_sp)+
+  tm_dots("red",size=.5)
+
+png(paste0("figure/citymap2_",cityI,".png"))
+  citymap+ 
+tm_shape(bus_stop_sp)+
+  tm_dots(c("#FFEFDB"),size=.5)
+dev.off()
+```
+
+```{r buildingsize}
+
+bg_poly$area <- sapply(slot(bg_poly, "polygons"), slot, "area")
+
+png(paste0("figure/citymaparea_",cityI,".png"))
+tm_shape(bg_poly) +
+  tm_fill("area", legend.show = FALSE) + 
+  tm_style_cobalt()
+dev.off()
+```
+
+
+
+## Zensus Atlas
+
+Beispiele: 
+
+
+
+
+
+## Links
+
+- [tmap in a nutshell](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-nutshell.html)
+
+- [Compute the area of shapes](https://stat.ethz.ch/pipermail/r-sig-geo/2011-January/010789.html)
