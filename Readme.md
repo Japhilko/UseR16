@@ -5,18 +5,20 @@ My Topics for User16
     Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
 -   The Openstreetmap project
 -   [The R-package
-    osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar.md)
+    osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar_example.md)
 -   The R-package geosmdata
 -   Conclusion
 
-Tutorials at UseR16
--------------------
+[Tutorials](http://blog.revolutionanalytics.com/2016/06/the-user-2016-tutorials.html) at UseR16
+-----------------------------------------------------------------------------------------------
 
 -   [Data Science at
     Microsoft](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
 
 -   [Using github](http://user2016.org/tutorials/01.html)- [happy
     git](http://happygitwithr.com/workshops.html#user-2016-stanford)
+
+-   [More than words](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
 
 Presentations at UseR16
 -----------------------
