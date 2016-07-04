@@ -7,7 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F,warning=F,cache=T,message=F)
-cityI <- "Dallas"
+```
+
+```{r cityI}
+cityI <- "Stanford"
 ```
 
 
@@ -35,15 +38,11 @@ library("ggmap")
 gc <- geocode(cityI)
 bb <- center_bbox(gc$lon, gc$lat, 1000, 1000)
 ua <- get_osm(bb, source = src)
-save(ua,file=paste0("data/ua_",cityI,".RData"))
 ```
 
-
-Vergleichende Analyse von verschiedenen Gebieten (bspw. Gemeinden, Stadtteile oder Häuserblocks,...)
-
+## Get the contours of buildings
 
 ```{r getbuildings}
-## Get the contours of buildings
 bg_ids <- find(ua, way(tags(k=="building")))
 bg_ids <- find_down(ua, way(bg_ids))
 bg <- subset(ua, ids = bg_ids)
@@ -99,14 +98,6 @@ plot(bg_poly,col="royalblue",border="lightgray")
 for(i in 1:length(way_types)){
   eval(parse(text=paste0("plot(",way_types[i],"_sp,type='l',col='",waycols[i],"',add=T)")))
 }
-
-png(paste0("figure/tmways_",cityI,".png"))
-  par(mai=c(0,0,0,0))
-  plot(bg_poly,col="royalblue",border="lightgray")
-for(i in 1:length(way_types)){
-  eval(parse(text=paste0("plot(",way_types[i],"_sp,type='l',col='",waycols[i],"',add=T)")))
-}
-dev.off()
 ```
 
 
@@ -121,58 +112,17 @@ scaleL <- sort(seq(0,4,4/(length(way_types)-1)),decreasing = T)
 for(i in 1:length(way_types)){
   eval(parse(text=paste0("citymap <- citymap + tm_shape(", way_types[i],"_sp)+  tm_lines('",waycols[i],"',scale=",scaleL[i],")")))
 }
-
-png(paste0("figure/citymap_",cityI,".png"))
-  citymap
-dev.off()
 ```
 
-```{r getpoi}
-## Points of interest
-osm_values <- c("bus_stop","tree")
-osm_keys <- c("highway","natural")
-
-for ( i in 1:length(osm_values)){
-osm_obj <- find(ua, node(tags(k == osm_keys[i] & v == osm_values[i])))
-osm_obj <- find_down(ua, node(osm_obj))
-osm_obj <- subset(ua, ids = osm_obj)
-eval(parse(text=paste0(osm_values[i],"_sp <- as_sp(osm_obj,'points')")))
-}
-```
-
-## Plot POIs
-
-```{r plotPOI}
-citymap + 
-tm_shape(bus_stop_sp)+
-  tm_dots("red",size=.5)
-
-png(paste0("figure/citymap2_",cityI,".png"))
-  citymap+ 
-tm_shape(bus_stop_sp)+
-  tm_dots(c("#FFEFDB"),size=.5)
-dev.off()
-```
 
 ```{r buildingsize}
 
 bg_poly$area <- sapply(slot(bg_poly, "polygons"), slot, "area")
 
-png(paste0("figure/citymaparea_",cityI,".png"))
 tm_shape(bg_poly) +
   tm_fill("area", legend.show = FALSE) + 
   tm_style_cobalt()
-dev.off()
 ```
-
-
-
-## Zensus Atlas
-
-Beispiele: 
-
-
-
 
 
 ## Links
