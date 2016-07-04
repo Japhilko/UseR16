@@ -2,7 +2,7 @@
 title: "osmar"
 author: "Jan-Philipp Kolb"
 date: "8 Juni 2016"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
@@ -116,7 +116,6 @@ for(i in 1:length(way_types)){
 
 
 ```{r buildingsize}
-
 bg_poly$area <- sapply(slot(bg_poly, "polygons"), slot, "area")
 
 tm_shape(bg_poly) +
