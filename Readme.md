@@ -20,6 +20,11 @@ My Topics for User16
 
 -   [More than words](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
 
+-   [Text Mining](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
+
+-   [Regression Modelling
+    Strategies](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS)
+
 Presentations at UseR16
 -----------------------
 
@@ -29,6 +34,8 @@ R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
 ![Slides Hadley Wickham](figure/HadleySlide.jpg)
 
 [Source](http://varianceexplained.org/files/DavidRobinsonBroomUseR2016.pdf)
+
+-   [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
 
 Catching Up with Rstudio
 ------------------------
@@ -42,3 +49,4 @@ Add On
 -   Technical Challenges
 -   [Resources for programming with
     R](http://www.r-bloggers.com/my-main-resources-for-r-programming/)
+-   [Possibility to publish](http://f1000research.com/)

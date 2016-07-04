@@ -1,0 +1,37 @@
+---
+title: "Example geosmdata"
+author: "Jan-Philipp Kolb"
+date: "13 Juni 2016"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,cache=T,message=F,warning=F)
+```
+
+## The geosmdata package
+
+```{r claiforniaBusStop}
+library("geosmdata")
+placeI <- "California"
+objI <- "highway=bus_stop"
+objII <- "bus_stop"
+xml_objI <- get_osm_nodes(object=objI,placeI)
+info <- extract_osm_nodes(xml_objI,objII)
+```
+
+
+## Combination geosmdata and ggmap
+
+```{r}
+library("ggmap")
+mapI <- qmap("Visalia", zoom = 7)
+
+mapI +
+stat_density2d(
+aes(x = lon, y = lat),
+size = 1, bins = 10, data = info,
+geom = "polygon",alpha=.2,col=c("#698B22")
+)
+```
+
