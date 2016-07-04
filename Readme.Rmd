@@ -5,7 +5,14 @@ date: "6 Juni 2016"
 output: md_document
 ---
 
-## Topics
+
+## Tutorials
+
+- [Data Science at Microsoft](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
+
+- [Using github](http://user2016.org/tutorials/01.html)- [happy git](http://happygitwithr.com/workshops.html#user-2016-stanford)
+
+## My Topics
 
 - [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
 - The Openstreetmap project
@@ -13,6 +20,9 @@ output: md_document
 - The R-package geosmdata
 - Conclusion
 
+## Presentations at UseR
+
+[A future for R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
 
 ## Add On 
 
