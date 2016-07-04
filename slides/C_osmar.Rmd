@@ -2,7 +2,7 @@
 title: "osmar"
 author: "Jan-Philipp Kolb"
 date: "8 Juni 2016"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}

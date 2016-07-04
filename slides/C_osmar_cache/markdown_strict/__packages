@@ -1,0 +1,15 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+XML
+bitops
+RCurl
+sp
+geosphere
+osmar
+ggplot2
+ggmap

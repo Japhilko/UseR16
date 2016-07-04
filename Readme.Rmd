@@ -6,27 +6,32 @@ output: md_document
 ---
 
 
-## Tutorials
+## My Topics for User16
+
+- [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
+- The Openstreetmap project
+- [The R-package osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar.md)
+- The R-package geosmdata
+- Conclusion
+
+
+## Tutorials at UseR16
 
 - [Data Science at Microsoft](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
 
 - [Using github](http://user2016.org/tutorials/01.html)- [happy git](http://happygitwithr.com/workshops.html#user-2016-stanford)
 
-## My Topics
 
-- [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
-- The Openstreetmap project
-- The R-package osmar
-- The R-package geosmdata
-- Conclusion
 
-## Presentations at UseR
+## Presentations at UseR16
 
 [A future for R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
 
 
 
 ![Slides Hadley Wickham](figure/HadleySlide.jpg)
+
+[Source](http://varianceexplained.org/files/DavidRobinsonBroomUseR2016.pdf)
 
 ## Catching Up with Rstudio
 
