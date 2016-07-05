@@ -1,52 +1,46 @@
-My Topics for User16
---------------------
+# Tie-ins between R and Openstreetmap data
+Jan-Philipp Kolb  
+6 Juni 2016  
 
--   [Outline
-    Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
--   The Openstreetmap project
--   [The R-package
-    osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar_example.md)
--   The R-package geosmdata
--   Conclusion
 
-[Tutorials](http://blog.revolutionanalytics.com/2016/06/the-user-2016-tutorials.html) at UseR16
------------------------------------------------------------------------------------------------
+## My Topics for UseR16
 
--   [Data Science at
-    Microsoft](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
+- [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
+- The Openstreetmap project
+- [The R-package osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar_example.md)
+- The R-package geosmdata
+- Conclusion
 
--   [Using github](http://user2016.org/tutorials/01.html)- [happy
-    git](http://happygitwithr.com/workshops.html#user-2016-stanford)
+- [Complete slides](https://github.com/Japhilko/UseR16/blob/master/slides/Kolb_user16.pdf) of my presentation
 
--   [More than words](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
+## [Tutorials](http://blog.revolutionanalytics.com/2016/06/the-user-2016-tutorials.html) at UseR16
 
--   [Text Mining](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
+- [Data Science at Microsoft](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
 
--   [Regression Modelling
-    Strategies](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS)
+- [Using github](http://user2016.org/tutorials/01.html)- [happy git](http://happygitwithr.com/workshops.html#user-2016-stanford)
 
-Presentations at UseR16
------------------------
+- [More than words](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
 
-[A future for
-R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
+- [Text Mining](http://algo.scu.edu/~sanjivdas/Temp/user2016/)
+
+- [Regression Modelling Strategies](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS)
+
+## Presentations at UseR16
+
+[A future for R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
 
 ![Slides Hadley Wickham](figure/HadleySlide.jpg)
 
 [Source](http://varianceexplained.org/files/DavidRobinsonBroomUseR2016.pdf)
 
--   [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
+- [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
 
-Catching Up with Rstudio
-------------------------
+## Catching Up with Rstudio
 
--   [Using
-    Parameters](http://rmarkdown.rstudio.com/developer_parameterized_reports.html)
+- [Using Parameters](http://rmarkdown.rstudio.com/developer_parameterized_reports.html)
 
-Add On
-------
+## Add On 
 
--   Technical Challenges
--   [Resources for programming with
-    R](http://www.r-bloggers.com/my-main-resources-for-r-programming/)
--   [Possibility to publish](http://f1000research.com/)
+- Technical Challenges
+- [Resources for programming with R](http://www.r-bloggers.com/my-main-resources-for-r-programming/)
+- [Possibility to publish](http://f1000research.com/)
