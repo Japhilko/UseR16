@@ -2,7 +2,9 @@
 title: "Openstreetmap"
 author: "Jan-Philipp Kolb"
 date: "8 Juni 2016"
-output: html_document
+output:
+  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
@@ -28,3 +30,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ## XML from Overpass
 
 ![XML example](figure/xmlexample.PNG)
+
+## [Openstreetmap](www.openstreetmap.org)
+
+- free project
+
+- [User-Generated
+street Maps](http://discovery.ucl.ac.uk/13849/1/13849.pdf)

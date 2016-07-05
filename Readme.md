@@ -25,7 +25,7 @@ Jan-Philipp Kolb
 
 - [Regression Modelling Strategies](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS)
 
-## Presentations at UseR16
+# Tuesday Presentations at UseR16
 
 [A future for R](http://www.r-bloggers.com/a-future-for-r-slides-from-user-2016/)
 
@@ -34,6 +34,26 @@ Jan-Philipp Kolb
 [Source](http://varianceexplained.org/files/DavidRobinsonBroomUseR2016.pdf)
 
 - [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
+
+## Using Spark with R
+
+- [Jeff Allen](https://twitter.com/trestlejeff) - Using [Apache Spark](http://spark.apache.org/) with Shiny and RMarkdown
+- [sparklyr](http://spark.rstudio.com/extensions.html)
+- [sparklyr on github](https://github.com/rstudio/sparklyr)
+
+
+
+```r
+install.packages("devtools")
+devtools::install_github("rstudio/sparklyr")
+# spark_install()
+# sc <- spark_connect
+# spark_read_csv
+
+library(sparklyr)
+spark_install(version = "1.6.1")
+```
+
 
 ## Catching Up with Rstudio
 
