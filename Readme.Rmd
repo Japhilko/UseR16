@@ -11,7 +11,7 @@ output:
 ## My Topics for UseR16
 
 - [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
-- The Openstreetmap project
+- [The Openstreetmap project](https://github.com/Japhilko/UseR16/blob/master/slides/B_Openstreetmap.md)
 - [The R-package osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar_example.md)
 - The R-package geosmdata
 - Conclusion

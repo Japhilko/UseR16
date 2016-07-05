@@ -2,7 +2,9 @@
 title: "Example geosmdata"
 author: "Jan-Philipp Kolb"
 date: "13 Juni 2016"
-output: md_document
+output:
+  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
