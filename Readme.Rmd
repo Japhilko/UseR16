@@ -40,6 +40,13 @@ output:
 
 - [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
 
+
+## Wednesday Presentations
+
+- [R at Microsoft](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Changing-lives-with-Data-Science-at-Microsoft)
+
+- [shinyjs](http://deanattali.com/shinyjs-user-2016/) - [longer version](http://deanattali.com/shinyjs-shinydevcon-2016/)
+
 ## Using Spark with R
 
 - [Jeff Allen](https://twitter.com/trestlejeff) - Using [Apache Spark](http://spark.apache.org/) with Shiny and RMarkdown

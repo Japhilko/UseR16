@@ -6,7 +6,7 @@ Jan-Philipp Kolb
 ## My Topics for UseR16
 
 - [Outline Motivation](https://github.com/Japhilko/UseR16/blob/master/slides/A_Intro.Rmd)
-- The Openstreetmap project
+- [The Openstreetmap project](https://github.com/Japhilko/UseR16/blob/master/slides/B_Openstreetmap.md)
 - [The R-package osmar](https://github.com/Japhilko/UseR16/blob/master/slides/C_osmar_example.md)
 - The R-package geosmdata
 - Conclusion
@@ -34,6 +34,13 @@ Jan-Philipp Kolb
 [Source](http://varianceexplained.org/files/DavidRobinsonBroomUseR2016.pdf)
 
 - [Package dplyr](https://blog.rstudio.org/2016/06/27/dplyr-0-5-0/)
+
+
+## Wednesday Presentations
+
+- [R at Microsoft](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Changing-lives-with-Data-Science-at-Microsoft)
+
+- [shinyjs](http://deanattali.com/shinyjs-user-2016/) - [longer version](http://deanattali.com/shinyjs-shinydevcon-2016/)
 
 ## Using Spark with R
 
