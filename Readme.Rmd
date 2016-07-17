@@ -47,6 +47,8 @@ output:
 
 - [shinyjs](http://deanattali.com/shinyjs-user-2016/) - [longer version](http://deanattali.com/shinyjs-shinydevcon-2016/)
 
+- [Reproducible Research](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/GNU-make-for-reproducible-data-analysis-using-R-and-other-statistical-software)
+
 ## Using Spark with R
 
 - [Jeff Allen](https://twitter.com/trestlejeff) - Using [Apache Spark](http://spark.apache.org/) with Shiny and RMarkdown
