@@ -77,3 +77,11 @@ spark_install(version = "1.6.1")
 - Technical Challenges
 - [Resources for programming with R](http://www.r-bloggers.com/my-main-resources-for-r-programming/)
 - [Possibility to publish](http://f1000research.com/)
+
+
+## Literature
+
+- [An Introduction to statistical learning](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Fourth%20Printing.pdf)
+
+- [The Elements of statistical Learning](https://web.stanford.edu/~hastie/local.ftp/Springer/OLD/ESLII_print4.pdf)
+
