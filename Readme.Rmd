@@ -85,3 +85,13 @@ spark_install(version = "1.6.1")
 
 - [The Elements of statistical Learning](https://web.stanford.edu/~hastie/local.ftp/Springer/OLD/ESLII_print4.pdf)
 
+## Regression
+
+- Nearest Neighbour Method
+- nearest neighbour average
+
+good for small p and big N
+
+- smoothers
+
+- curse of dimensionality
